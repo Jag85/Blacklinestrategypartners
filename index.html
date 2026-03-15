@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blackline Strategy Partners helps founders identify the bottleneck slowing their business and build strategy with clarity.">
+    <title>Blackline Strategy Partners | Clarity. Strategy. Momentum.</title>
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.2;
+            color: #0a0a0a;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #333;
+        }
+
+        /* ===== LAYOUT CONTAINERS ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container-narrow {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* ===== BUTTONS ===== */
+        .button {
+            display: inline-block;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+
+        .button-primary {
+            background: #0a0a0a;
+            color: #ffffff;
+        }
+
+        .button-primary:hover {
+            background: #2a2a2a;
+            transform: translateY(-1px);
+        }
+
+        .button-secondary {
+            background: transparent;
+            color: #0a0a0a;
+            border: 2px solid #0a0a0a;
+        }
+
+        .button-secondary:hover {
+            background: #0a0a0a;
+            color: #ffffff;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 120px 0 100px;
+            text-align: center;
+        }
+
+        .hero-tagline {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #0a0a0a;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== WHO WE HELP SECTION ===== */
+        .who-we-help {
+            background: #ffffff;
+        }
+
+        .who-we-help h2 {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .founder-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .founder-type {
+            padding: 24px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about {
+            background: #f8f9fa;
+        }
+
+        .about-intro {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 32px;
+            color: #0a0a0a;
+        }
+
+        .struggles-list {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .struggles-list li {
+            padding: 12px 0 12px 32px;
+            position: relative;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .struggles-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-size: 24px;
+            color: #0a0a0a;
+        }
+
+        /* ===== DIAGNOSTIC SECTION ===== */
+        .diagnostic {
+            background: #0a0a0a;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .diagnostic h2 {
+            color: #ffffff;
+        }
+
+        .diagnostic p {
+            color: #e0e0e0;
+            max-width: 600px;
+            margin: 0 auto 32px;
+            font-size: 18px;
+        }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing {
+            background: #ffffff;
+        }
+
+        .pricing h2 {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .pricing-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 40px 32px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            border-color: #0a0a0a;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .pricing-card h3 {
+            margin-bottom: 16px;
+        }
+
+        .pricing-card-description {
+            color: #555;
+            margin-bottom: 24px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .pricing-card-price {
+            font-size: 48px;
+            font-weight: 700;
+            color: #0a0a0a;
+            margin: 24px 0;
+        }
+
+        .pricing-card-price-label {
+            font-size: 16px;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .pricing-card-includes {
+            text-align: left;
+            margin: 24px 0;
+        }
+
+        .pricing-card-includes-title {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .pricing-card-includes ul {
+            list-style: none;
+        }
+
+        .pricing-card-includes li {
+            padding: 8px 0 8px 24px;
+            position: relative;
+            color: #333;
+            font-size: 15px;
+        }
+
+        .pricing-card-includes li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #0a0a0a;
+            font-weight: 700;
+        }
+
+        .pricing-note {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== BOOKING SECTION ===== */
+        .booking {
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .booking h2 {
+            margin-bottom: 32px;
+        }
+
+        /* ===== TRUST SECTION ===== */
+        .trust {
+            background: #ffffff;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-item h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .trust-item p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .trust-statement {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 500;
+            color: #0a0a0a;
+            max-width: 700px;
+            margin: 48px auto 0;
+            line-height: 1.5;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0a0a0a;
+            color: #ffffff;
+            padding: 48px 0;
+            text-align: center;
+        }
+
+        footer h3 {
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            h1, .hero-title {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 80px 0 60px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-types {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1, .hero-title {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .pricing-card-price {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-tagline">Blackline Strategy Partners</div>
+            <h1 class="hero-title">Identify the Bottleneck Slowing Your Business</h1>
+            <p class="hero-subtitle">Blackline Strategy Partners helps founders diagnose the constraint holding their business back and build the strategy to move forward with clarity.</p>
+            <div class="hero-buttons">
+                <a href="https://jag85.github.io/FOCUS-Scorecard/" class="button button-primary">Take the Founder Diagnostic</a>
+                <a href="https://calendly.com/YOUR-LINK" class="button button-secondary">Book a Strategy Session</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHO WE HELP SECTION ===== -->
+    <section class="who-we-help">
+        <div class="container">
+            <h2>Who We Help</h2>
+            <div class="founder-types">
+                <div class="founder-type">Service Business Owners</div>
+                <div class="founder-type">Consultants</div>
+                <div class="founder-type">Agency Founders</div>
+                <div class="founder-type">Coaches</div>
+                <div class="founder-type">Creators Building Businesses</div>
+                <div class="founder-type">Early SaaS Founders</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="about">
+        <div class="container-narrow">
+            <p class="about-intro">Blackline Strategy Partners helps founders identify the primary constraint slowing growth in their business.</p>
+            
+            <p>Many founders struggle with:</p>
+            
+            <ul class="struggles-list">
+                <li>unclear offers</li>
+                <li>inconsistent customer acquisition</li>
+                <li>weak systems</li>
+                <li>pricing confusion</li>
+                <li>lack of strategic focus</li>
+            </ul>
+            
+            <p>Our work focuses on diagnosing the real bottleneck and building the strategy to move forward.</p>
+        </div>
+    </section>
+
+    <!-- ===== DIAGNOSTIC SECTION ===== -->
+    <section class="diagnostic">
+        <div class="container-narrow">
+            <h2>Start With the Founder Diagnostic</h2>
+            <p>Take the FOCUS Founder Scorecard to identify the primary constraint slowing growth in your business.</p>
+            <a href="https://jag85.github.io/FOCUS-Scorecard/" class="button button-primary" style="background: #ffffff; color: #0a0a0a;">Take the Founder Diagnostic</a>
+        </div>
+    </section>
+
+    <!-- ===== PRICING SECTION ===== -->
+    <section class="pricing">
+        <div class="container">
+            <h2>Services & Pricing</h2>
+            
+            <div class="pricing-grid">
+                <!-- Pricing Card 1 -->
+                <div class="pricing-card">
+                    <h3>Strategy Session</h3>
+                    <p class="pricing-card-description">A focused session to identify the primary constraint in your business and determine the most important next strategic moves.</p>
+                    
+                    <div class="pricing-card-price">$125</div>
+                    
+                    <div class="pricing-card-includes">
+                        <div class="pricing-card-includes-title">Includes</div>
+                        <ul>
+                            <li>60-minute strategy session</li>
+                            <li>review of diagnostic results</li>
+                            <li>identification of primary bottleneck</li>
+                            <li>30-day strategic direction</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pricing Card 2 -->
+                <div class="pricing-card">
+                    <h3>Growth Roadmap</h3>
+                    <p class="pricing-card-description">A deeper strategic engagement designed to clarify priorities and help founders focus on the most important growth opportunities.</p>
+                    
+                    <div class="pricing-card-price">$375</div>
+                    
+                    <div class="pricing-card-includes">
+                        <div class="pricing-card-includes-title">Includes</div>
+                        <ul>
+                            <li>deep-dive strategy session</li>
+                            <li>clearer growth priorities</li>
+                            <li>founder-specific recommendations</li>
+                            <li>roadmap for next steps</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pricing Card 3 -->
+                <div class="pricing-card">
+                    <h3>Monthly Advisory</h3>
+                    <p class="pricing-card-description">Ongoing strategic guidance for founders who want a trusted thinking partner as they grow.</p>
+                    
+                    <div class="pricing-card-price">
+                        $1,000<span class="pricing-card-price-label">/month</span>
+                    </div>
+                    
+                    <div class="pricing-card-includes">
+                        <div class="pricing-card-includes-title">Includes</div>
+                        <ul>
+                            <li>two strategy sessions per month</li>
+                            <li>ongoing bottleneck diagnosis</li>
+                            <li>growth strategy refinement</li>
+                            <li>strategic decision support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <p class="pricing-note">Introductory pricing may change as the firm grows.</p>
+        </div>
+    </section>
+
+    <!-- ===== BOOKING SECTION ===== -->
+    <section class="booking">
+        <div class="container-narrow">
+            <h2>Book a Strategy Session</h2>
+            <a href="https://calendly.com/YOUR-LINK" class="button button-primary">Book Your Session</a>
+        </div>
+    </section>
+
+    <!-- ===== TRUST SECTION ===== -->
+    <section class="trust">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <h3>Diagnostic-Driven Strategy</h3>
+                    <p>Start with clarity on what's actually holding you back</p>
+                </div>
+                <div class="trust-item">
+                    <h3>Founder-Focused Clarity</h3>
+                    <p>Built for operators who need practical direction</p>
+                </div>
+                <div class="trust-item">
+                    <h3>Practical Next Steps</h3>
+                    <p>Strategy that translates into real execution</p>
+                </div>
+                <div class="trust-item">
+                    <h3>Designed for Real Businesses</h3>
+                    <p>Not theory—actionable guidance for growth</p>
+                </div>
+            </div>
+            
+            <p class="trust-statement">Built for founders who need clarity, strategy, and momentum.</p>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <h3>Blackline Strategy Partners</h3>
+            <p>Founded by Jarrell A. Green</p>
+            <p style="margin-top: 24px;">&copy; 2026 Blackline Strategy Partners. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
